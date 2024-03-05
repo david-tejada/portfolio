@@ -1,0 +1,84 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import FiveStars from "../../components/FiveStars.astro";
+---
+
+<Layout title="Rango">
+  <h1 class="mt-8 max-w-[30ch] text-4xl font-bold">talon-filetree</h1>
+
+  <div
+    class="mt-16 flex flex-col items-center gap-8 leading-relaxed sm:flex-row"
+  >
+    <img
+      src="/logo-filetree.svg"
+      alt=""
+      class="size-32 rounded-md bg-sky-800 object-contain p-4"
+    />
+    <ul>
+      <li><strong>Type</strong>: VS Code Extension</li>
+      <li>
+        <strong>Stack</strong>: Typescript, VS Code Extension API
+      </li>
+      <li>
+        <strong>Extension Link</strong>:
+        <a
+          class="font-bold text-orange-500"
+          href="https://marketplace.visualstudio.com/items?itemName=PaulSchaaf.talon-filetree"
+          >Visual Studio Marketplace</a
+        >
+      </li>
+      <li>
+        <strong>Repository</strong>: <a
+          class="font-bold text-orange-500"
+          href="https://github.com/paul-schaaf/talon-filetree">GitHub</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <p class="mt-8">
+    talon-filetree is a VS Code Extension that enables people to navigate and
+    manipulate files and folders by voice.
+  </p>
+
+  <h2 class="mt-16 text-2xl font-bold">Purpose</h2>
+  <p class="mt-8">
+    Similar to my browser extension Rango and inspired by it, Paul Schaaf
+    created this extension to make manipulating files and folders by voice much
+    easier. I liked the extension and started using it from the beginning. I
+    found some limitations and started playing around with the extension's code
+    to see if I could improve it. I fixed some issues, implemented new features
+    and improved the overall code quality. Now I am the main contributor to this
+    extension with hundreds of users.
+  </p>
+
+  <img
+    class="mt-8 rounded border border-slate-500"
+    src="/filetree-screenshot.png"
+  />
+
+  <h2 class="mt-16 text-2xl font-bold">
+    Challenges Encountered and Lessons Learned
+  </h2>
+  <p class="mt-8">
+    I have never worked on a VS Code extension so the first step was
+    familiarizing myself with the API. There were many things that I needed to
+    change to fix some issues and be able to implement anothers so I had to
+    create a large PR. Looking back I probably should have broken down this PR
+    into smaller ones to make it easier for me and for the reviewer. Although I
+    have to say this PR was merged successfully after some back and forth. The
+    collaboration with other programmers is something that I thoroughly enjoy.
+  </p>
+
+  <h2 class="mt-16 text-2xl font-bold">User Reviews</h2>
+
+  <div class="mb-16 mt-8 grid gap-4 sm:grid-cols-[100px_auto]">
+    <FiveStars />
+    <p>
+      Fantastic extension for use with Talon. Really helps improve the
+      development process and voice interaction efficiency. — <strong
+        >Colton Loftus</strong
+      >
+    </p>
+  </div>
+</Layout>
