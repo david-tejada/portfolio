@@ -1,0 +1,16 @@
+---
+interface Props {
+  left: string;
+  right: string;
+}
+
+const { left, right } = Astro.props;
+---
+
+<div class="flex overflow-hidden rounded-lg border border-orange-600">
+  <div class="px-4 py-2">{left}</div><div
+    class="bg-orange-600 px-4 py-2 text-white"
+  >
+    {right}
+  </div>
+</div>

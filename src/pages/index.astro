@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Tag from "../components/Tag.astro";
+import Pill from "../components/Pill.astro";
 import Card from "../components/Card.astro";
 import * as about from "../content/about.md";
 ---
@@ -49,7 +50,7 @@ import * as about from "../content/about.md";
   <h2 class="mt-24 text-3xl font-bold">My Skills</h2>
   <p class="mt-4 leading-relaxed">
     These are the technologies I am more familiar with. Some I have used more
-    than others but I feel fairly confident in all of them.
+    than others but I feel fairly confident in all of them:
   </p>
 
   <ul class="mt-4 flex flex-wrap gap-4">
@@ -63,6 +64,15 @@ import * as about from "../content/about.md";
     <li><Tag>SASS</Tag></li>
     <li><Tag>Git</Tag></li>
     <li><Tag>Python</Tag></li>
+  </ul>
+
+  <p class="mt-4 leading-relaxed">I also speak these languages:</p>
+
+  <ul class="mt-4 flex flex-wrap gap-4">
+    <li><Pill left="Spanish" right="native" /></li>
+    <li><Pill left="English" right="proficient" /></li>
+    <li><Pill left="German" right="advanced" /></li>
+    <li><Pill left="French" right="intermediate" /></li>
   </ul>
 
   <h2 class="mt-24 text-3xl font-bold">My Work</h2>
