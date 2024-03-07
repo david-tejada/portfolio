@@ -1,3 +1,9 @@
+---
+import IconGithub from "../components/IconGithub.astro";
+import IconLinkedin from "../components/IconLinkedin.astro";
+import IconYoutube from "../components/IconYoutube.astro";
+---
+
 <header class="py-12">
   <div class="flex grow">
     <p class="mr-auto text-lg font-bold"><a href="/">David Tejada</a></p>
@@ -6,17 +12,22 @@
         <li>
           <a
             href="https://www.linkedin.com/in/david-mart%C3%ADnez-tejada-662880287/"
-            ><img src="/icon-linkedIn.svg" alt="" /></a
+            class="hover:text-orange-600"
+            ><span class="sr-only">LinkedIn</span><IconLinkedin /></a
           >
         </li>
         <li>
-          <a href="https://github.com/david-tejada"
-            ><img src="/icon-github.svg" alt="" /></a
+          <a
+            href="https://github.com/david-tejada"
+            class="hover:text-orange-600"
+            ><span class="sr-only">GitHub</span><IconGithub /></a
           >
         </li>
         <li>
-          <a href="https://www.youtube.com/@david-tejada"
-            ><img src="/icon-youtube.svg" alt="" /></a
+          <a
+            href="https://www.youtube.com/@david-tejada"
+            class="hover:text-orange-600"
+            ><span class="sr-only">YouTube</span><IconYoutube /></a
           >
         </li>
       </ul>
