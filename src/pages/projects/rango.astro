@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import FiveStars from "../../components/FiveStars.astro";
+import Review from "../../components/Review.astro";
 ---
 
 <Layout title="Rango - David Tejada">
@@ -130,39 +130,27 @@ import FiveStars from "../../components/FiveStars.astro";
 
   <p class="mt-8">Here is what some users have to say about Rango:</p>
 
-  <div class="mt-8 grid gap-4 sm:grid-cols-[100px_auto]">
-    <FiveStars />
-    <p>
-      Thank you for developing this! Super, super convenient with Talon compared
-      to Click by Voice/Vimium/other options. — <strong>Zachary McGohan</strong>
-    </p>
-  </div>
-
-  <div class="mt-8 grid gap-4 sm:grid-cols-[100px_auto]">
-    <FiveStars />
-    <p>
-      Really great work. Only problem is it makes you wish this functionality
-      was built in to everything and not just the browser! Super useful. — <strong
-        >John Arnold</strong
-      >
-    </p>
-  </div>
-
-  <div class="mt-8 grid gap-4 sm:grid-cols-[100px_auto]">
-    <FiveStars />
-    <p>
-      Really love this - Definitely a crucial addition to Talon and to
-      hands-less computer interaction. — <strong>Jon Weinrib</strong>
-    </p>
-  </div>
-
-  <div class="mb-16 mt-8 grid gap-4 sm:grid-cols-[100px_auto]">
-    <FiveStars />
-    <p>
-      This is the only extension that is faster then the vimium chrome extension
-      to interact with websites using pure voice and talon. — <strong
-        >Sandeep Joel</strong
-      >
-    </p>
+  <div class="my-8 grid gap-4">
+    <Review avatarImage="/avatars/adam_edison.jpg" author="Adam Edison"
+      >This is the best browser extension for navigating everything in the
+      browser without the use of a mouse. I'm using it with Talon, and it has
+      excellent integration.</Review
+    >
+    <Review avatarImage="/avatars/zachary_mcgohan.jpg" author="Zachary McGohan"
+      >Thank you for developing this! Super, super convenient with Talon
+      compared to Click by Voice/Vimium/other options.</Review
+    >
+    <Review avatarImage="/avatars/john_arnold.jpg" author="John Arnold"
+      >Really great work. Only problem is it makes you wish this functionality
+      was built in to everything and not just the browser! Super useful.</Review
+    >
+    <Review avatarImage="/avatars/jon_weinrib.jpg" author="Jon Weinrib"
+      >Really love this - Definitely a crucial addition to Talon and to
+      hands-less computer interaction.</Review
+    >
+    <Review avatarImage="/avatars/sandeep_joel.jpg" author="Sandeep Joel"
+      >This is the only extension that is faster then the vimium chrome
+      extension to interact with websites using pure voice and talon.</Review
+    >
   </div>
 </Layout>

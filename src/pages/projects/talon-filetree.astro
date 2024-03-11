@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import FiveStars from "../../components/FiveStars.astro";
+import Review from "../../components/Review.astro";
 ---
 
 <Layout title="talon-filetree - David Tejada">
@@ -72,13 +72,10 @@ import FiveStars from "../../components/FiveStars.astro";
 
   <h2 class="mt-16 text-2xl font-bold">User Reviews</h2>
 
-  <div class="mb-16 mt-8 grid gap-4 sm:grid-cols-[100px_auto]">
-    <FiveStars />
-    <p>
-      Fantastic extension for use with Talon. Really helps improve the
-      development process and voice interaction efficiency. — <strong
-        >Colton Loftus</strong
-      >
-    </p>
+  <div class="my-8">
+    <Review avatarImage="/avatars/colton_loftus.jpeg" author="Colton Loftus"
+      >Fantastic extension for use with Talon. Really helps improve the
+      development process and voice interaction efficiency.</Review
+    >
   </div>
 </Layout>
