@@ -2,16 +2,17 @@
 import IconGithub from "../components/IconGithub.astro";
 import IconLinkedin from "../components/IconLinkedin.astro";
 import IconYoutube from "../components/IconYoutube.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <header class="py-12">
   <div class="flex grow">
-    <p class="mr-auto text-lg font-bold">
+    <p class="text-lg font-bold">
       <a href="/" class="hover:text-orange-600">David Tejada</a>
     </p>
-    <nav>
+    <nav class="grow">
       <ul class="flex gap-8">
-        <li>
+        <li class="ml-auto">
           <a
             href="https://www.linkedin.com/in/david-mart%C3%ADnez-tejada-662880287/"
             class="hover:text-orange-600"
@@ -31,6 +32,9 @@ import IconYoutube from "../components/IconYoutube.astro";
             class="hover:text-orange-600"
             ><span class="sr-only">YouTube</span><IconYoutube /></a
           >
+        </li>
+        <li class="ml-auto">
+          <ThemeToggle />
         </li>
       </ul>
     </nav>
