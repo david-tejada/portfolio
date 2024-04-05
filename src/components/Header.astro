@@ -5,7 +5,7 @@ import IconYoutube from "../components/IconYoutube.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<header class="full-width sticky top-0 z-50 mx-4 mt-4 py-4 backdrop-blur-xl">
+<header class="py-12">
   <div class="flex grow items-center">
     <p class="text-lg font-bold">
       <a href="/" class="hover:text-orange-600">David Tejada</a>
@@ -40,15 +40,3 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     </nav>
   </div>
 </header>
-
-<style>
-  .full-width {
-    width: 100vw;
-    margin-left: 50%;
-    transform: translate3d(-50%, 0, 0);
-  }
-  .full-width > * {
-    width: min(40rem, 100% - 4rem);
-    margin-inline: auto;
-  }
-</style>
