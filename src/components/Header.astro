@@ -10,8 +10,11 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     <p class="text-lg font-bold">
       <a href="/" class="hover:text-orange-600">David Tejada</a>
     </p>
-    <nav class="grow">
-      <ul class="flex items-center gap-8">
+    <div class="grow">
+      <ThemeToggle />
+    </div>
+    <nav class="">
+      <ul class="flex items-center gap-4">
         <li class="ml-auto">
           <a
             href="https://www.linkedin.com/in/david-mart%C3%ADnez-tejada-662880287/"
@@ -32,9 +35,6 @@ import ThemeToggle from "../components/ThemeToggle.astro";
             class="hover:text-orange-600"
             ><span class="sr-only">YouTube</span><IconYoutube /></a
           >
-        </li>
-        <li class="ml-auto">
-          <ThemeToggle />
         </li>
       </ul>
     </nav>
