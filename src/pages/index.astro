@@ -1,21 +1,28 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Tag from "../components/Tag.astro";
-import Pill from "../components/Pill.astro";
 import Card from "../components/Card.astro";
-import * as about from "../content/about.md";
+import Pill from "../components/Pill.astro";
+import Tag from "../components/Tag.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portfolio - David Tejada">
-  <main>
-    <h1 class="mt-24 max-w-[30ch] text-4xl font-bold leading-tight">
-      Hi there, I'm David.
-      <br />
-      <span class="text-orange-600 dark:text-orange-400"
-        >Front End Developer</span
-      >, Electronic Engineer and lifelong learner.
+  <div class="grid min-h-[max(100vh,600px)] content-center">
+    <h1 class="mb-4 max-w-[30ch] text-4xl sm:text-7xl">
+      <div class="mb-4 text-lg text-violet-700 dark:text-green-500">
+        Hola, my name is
+      </div>
+      <span class="font-bold">David Tejada.</span>
     </h1>
-  </main>
+    <h2 class="mb-4 text-4xl font-bold text-slate-400 sm:text-7xl">
+      I create things for the web.
+    </h2>
+    <p class="max-w-[45ch] leading-relaxed sm:text-xl">
+      I'm a front-end developer. I'm the creator of the browser extension <a
+        href="https://rango.click"
+        class="underline">Rango</a
+      >, used by thousands of people to navigate the web by voice.
+    </p>
+  </div>
 
   <h2 class="mt-24 text-3xl font-bold">About Me</h2>
   <p class="mt-4 leading-relaxed">

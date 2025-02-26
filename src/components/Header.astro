@@ -1,42 +1,56 @@
 ---
-import IconGithub from "../components/IconGithub.astro";
-import IconLinkedin from "../components/IconLinkedin.astro";
-import IconYoutube from "../components/IconYoutube.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<header class="py-12">
-  <div class="flex grow items-center">
-    <p class="text-lg font-bold">
-      <a href="/" class="hover:text-orange-600">David Tejada</a>
-    </p>
-    <div class="grow">
-      <ThemeToggle />
-    </div>
-    <nav class="">
-      <ul class="flex items-center gap-4">
-        <li class="ml-auto">
-          <a
-            href="https://www.linkedin.com/in/david-mart%C3%ADnez-tejada-662880287/"
-            class="hover:text-orange-600"
-            ><span class="sr-only">LinkedIn</span><IconLinkedin /></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/david-tejada"
-            class="hover:text-orange-600"
-            ><span class="sr-only">GitHub</span><IconGithub /></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.youtube.com/@david-tejada"
-            class="hover:text-orange-600"
-            ><span class="sr-only">YouTube</span><IconYoutube /></a
-          >
-        </li>
+<header class="fixed top-0 right-0 left-0 px-16 py-8">
+  <div class="space-around flex grow items-center max-sm:gap-4">
+    <nav id="main-navigation" class="max-sm:order-1">
+      <button
+        id="menu-button"
+        class="peer relative z-100 sm:hidden"
+        aria-expanded="false">open</button
+      >
+      <div
+        id="menu-overlay"
+        class="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-300 peer-aria-expanded:pointer-events-auto peer-aria-expanded:opacity-50"
+      >
+      </div>
+      <ul
+        class="flex items-center justify-center gap-12 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:w-4/5 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0"
+      >
+        <li><a href="/">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <ThemeToggle class="max-sm:z-1" />
   </div>
 </header>
+
+<script>
+  const menuButton = document.querySelector("#menu-button");
+  const menuOverlay = document.querySelector("#menu-overlay");
+  const menuLinks = document.querySelectorAll("#main-navigation a");
+
+  menuButton.addEventListener("click", () => {
+    menuButton.ariaExpanded =
+      menuButton.ariaExpanded === "true" ? "false" : "true";
+    menuButton.textContent =
+      menuButton.ariaExpanded === "true" ? "close" : "open";
+  });
+
+  window.addEventListener("scroll", () => {
+    menuButton.ariaExpanded = "false";
+  });
+
+  menuOverlay.addEventListener("click", () => {
+    menuButton.ariaExpanded = "false";
+  });
+
+  for (const link of menuLinks) {
+    link.addEventListener("click", () => {
+      menuButton.ariaExpanded = "false";
+    });
+  }
+</script>
