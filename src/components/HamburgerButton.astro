@@ -32,16 +32,14 @@ const { id, class: className } = Astro.props;
     transition:
       rotate 150ms ease-in,
       width 150ms ease-in,
-      x 150ms ease-in,
-      y 150ms ease-in 150ms,
+      transform 150ms ease-in 150ms,
       opacity 0ms 150ms;
     transform-origin: center;
   }
 
   .hamburger-button[aria-expanded="true"] .line {
     transition:
-      y 150ms ease-in,
-      x 150ms ease-in,
+      transform 150ms ease-in,
       width 150ms ease-in,
       rotate 150ms ease-in 150ms,
       opacity 0ms 150ms;
@@ -49,8 +47,6 @@ const { id, class: className } = Astro.props;
 
   .hamburger-button[aria-expanded="true"] .line:is(.top, .bottom) {
     width: 80px;
-    x: 10;
-    y: 45;
   }
 
   .hamburger-button[aria-expanded="true"] .line.middle {
@@ -59,9 +55,11 @@ const { id, class: className } = Astro.props;
 
   .hamburger-button[aria-expanded="true"] .line.top {
     rotate: 45deg;
+    transform: translatey(30px);
   }
 
   .hamburger-button[aria-expanded="true"] .line.bottom {
     rotate: -45deg;
+    transform: translatex(5px) translatey(-30px);
   }
 </style>
