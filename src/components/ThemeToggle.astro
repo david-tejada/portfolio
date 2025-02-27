@@ -1,9 +1,14 @@
 ---
-
+const { class: className } = Astro.props;
 ---
 
-<button class="mx-auto flex items-center" id="themeToggle">
-  <svg width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<button class:list={["ml-auto flex items-center", className]} id="themeToggle">
+  <svg
+    width="36"
+    height="36"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
     <path
       class="sun"
       fill-rule="evenodd"
