@@ -1,15 +1,12 @@
 ---
+import HamburgerButton from "../components/HamburgerButton.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<header class="fixed top-0 right-0 left-0 px-16 py-8">
+<header class="fixed top-0 right-0 left-0 px-8 py-8 sm:px-16">
   <div class="space-around flex grow items-center max-sm:gap-8">
-    <nav id="main-navigation" class="max-sm:order-1">
-      <button
-        id="menu-button"
-        class="peer relative z-100 sm:hidden"
-        aria-expanded="false">open</button
-      >
+    <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
+      <HamburgerButton id="menu-button" class="peer relative z-100 sm:hidden" />
       <div
         id="menu-overlay"
         class="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-300 peer-aria-expanded:pointer-events-auto peer-aria-expanded:opacity-50"
@@ -38,13 +35,6 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     event.preventDefault();
   });
 
-  menuButton.addEventListener("click", () => {
-    menuButton.ariaExpanded =
-      menuButton.ariaExpanded === "true" ? "false" : "true";
-    menuButton.textContent =
-      menuButton.ariaExpanded === "true" ? "close" : "open";
-  });
-
   document.addEventListener("scroll", () => {
     closeNavigationMenu();
   });
@@ -65,7 +55,5 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 
   function closeNavigationMenu() {
     menuButton.ariaExpanded = "false";
-    menuButton.textContent =
-      menuButton.ariaExpanded === "true" ? "close" : "open";
   }
 </script>

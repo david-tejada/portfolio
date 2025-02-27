@@ -1,0 +1,67 @@
+---
+const { id, class: className } = Astro.props;
+---
+
+<button
+  id={id}
+  class:list={[className, "hamburger-button"]}
+  aria-expanded="false"
+>
+  <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
+    <rect class="line top" width="80" height="8" x="10" y="15" rx="5"></rect>
+    <rect class="line middle" width="70" height="8" x="15" y="45" rx="5"></rect>
+    <rect class="line bottom" width="90" height="8" x="5" y="75" rx="5"></rect>
+  </svg>
+</button>
+
+<script>
+  const hamburgerButton = document.querySelector(".hamburger-button");
+
+  hamburgerButton.addEventListener("click", () => {
+    hamburgerButton.setAttribute(
+      "aria-expanded",
+      hamburgerButton.getAttribute("aria-expanded") === "true"
+        ? "false"
+        : "true"
+    );
+  });
+</script>
+
+<style>
+  .hamburger-button .line {
+    transition:
+      rotate 150ms ease-in,
+      width 150ms ease-in,
+      x 150ms ease-in,
+      y 150ms ease-in 150ms,
+      opacity 0ms 150ms;
+    transform-origin: center;
+  }
+
+  .hamburger-button[aria-expanded="true"] .line {
+    transition:
+      y 150ms ease-in,
+      x 150ms ease-in,
+      width 150ms ease-in,
+      rotate 150ms ease-in 150ms,
+      opacity 0ms 150ms;
+  }
+
+  .hamburger-button[aria-expanded="true"] .line:is(.top, .bottom) {
+    width: 80px;
+    x: 10;
+    y: 45;
+  }
+
+  .hamburger-button[aria-expanded="true"] .line.middle {
+    opacity: 0;
+  }
+
+  .hamburger-button[aria-expanded="true"] .line.top {
+    rotate: 45deg;
+  }
+
+  .hamburger-button[aria-expanded="true"] .line.bottom {
+    rotate: -45deg;
+  }
+</style>
