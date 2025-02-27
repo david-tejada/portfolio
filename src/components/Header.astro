@@ -4,7 +4,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <header class="fixed top-0 right-0 left-0 px-8 py-8 sm:px-16">
-  <div class="space-around flex grow items-center max-sm:gap-8">
+  <div class="space-around flex grow max-sm:gap-8">
     <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
       <HamburgerButton id="menu-button" class="peer relative z-100 sm:hidden" />
       <div
@@ -21,7 +21,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <ThemeToggle class="max-sm:z-1" />
+    <ThemeToggle class="max-sm:z-1 max-sm:mr-auto max-sm:ml-0" />
   </div>
 </header>
 
