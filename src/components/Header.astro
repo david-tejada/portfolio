@@ -29,9 +29,14 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 </header>
 
 <script>
+  const mainNavigationList = document.querySelector("#main-navigation ul");
   const menuButton = document.querySelector("#menu-button");
   const menuOverlay = document.querySelector("#menu-overlay");
   const menuLinks = document.querySelectorAll("#main-navigation a");
+
+  mainNavigationList.addEventListener("touchmove", (event) => {
+    event.preventDefault();
+  });
 
   menuButton.addEventListener("click", () => {
     menuButton.ariaExpanded =
@@ -40,17 +45,27 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       menuButton.ariaExpanded === "true" ? "close" : "open";
   });
 
-  window.addEventListener("scroll", () => {
-    menuButton.ariaExpanded = "false";
+  document.addEventListener("scroll", () => {
+    closeNavigationMenu();
   });
 
   menuOverlay.addEventListener("click", () => {
-    menuButton.ariaExpanded = "false";
+    closeNavigationMenu();
+  });
+
+  menuOverlay.addEventListener("touchmove", () => {
+    closeNavigationMenu();
   });
 
   for (const link of menuLinks) {
     link.addEventListener("click", () => {
-      menuButton.ariaExpanded = "false";
+      closeNavigationMenu();
     });
+  }
+
+  function closeNavigationMenu() {
+    menuButton.ariaExpanded = "false";
+    menuButton.textContent =
+      menuButton.ariaExpanded === "true" ? "close" : "open";
   }
 </script>
