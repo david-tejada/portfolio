@@ -1,5 +1,6 @@
 ---
 const { id, class: className } = Astro.props;
+import { spring } from "motion";
 ---
 
 <button
@@ -27,12 +28,16 @@ const { id, class: className } = Astro.props;
   });
 </script>
 
-<style>
+<style
+  define:vars={{
+    spring: spring(0.4, 0.7),
+  }}
+>
   .hamburger-button .line {
     transition:
       rotate 150ms ease-in,
       width 150ms ease-in,
-      transform 150ms ease-in 150ms,
+      transform var(--spring) 150ms,
       opacity 0ms 150ms;
     transform-origin: center;
   }
@@ -41,7 +46,7 @@ const { id, class: className } = Astro.props;
     transition:
       transform 150ms ease-in,
       width 150ms ease-in,
-      rotate 150ms ease-in 150ms,
+      rotate var(--spring) 150ms,
       opacity 0ms 150ms;
   }
 
