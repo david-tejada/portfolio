@@ -28,17 +28,17 @@ const { class: className } = Astro.props;
     background: none;
   }
   .sun {
-    fill: black;
+    fill: transparent;
   }
   .moon {
-    fill: transparent;
+    fill: black;
   }
 
   :global(.dark) .sun {
-    fill: transparent;
+    fill: white;
   }
   :global(.dark) .moon {
-    fill: white;
+    fill: transparent;
   }
 </style>
 
