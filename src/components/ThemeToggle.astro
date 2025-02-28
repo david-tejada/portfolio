@@ -16,42 +16,24 @@ const { class: className } = Astro.props;
     stroke-linecap="round"
     stroke-linejoin="round"
     class="lucide lucide-moon-star"
-    ><path class="circle" d="M18 9 a6 6, 0, 0 0, 9 9, 9 9 0 1 1-9-9"
-    ></path><path class="star" d="M26 8 v4"></path><path
-      class="star"
-      d="M28 10 h-4"></path>
-    <line class="line" x1="18" y1="29" x2="18" y2="32" stroke-width="0"></line>
-    <line class="line" x1="18" y1="7" x2="18" y2="4" stroke-width="0"></line>
-    <line class="line" x1="4" y1="18" x2="7" y2="18" stroke-width="0"></line>
-    <line class="line" x1="32" y1="18" x2="29" y2="18" stroke-width="0"></line>
-    <line
-      class="line"
-      x1="25.78"
-      y1="25.78"
-      x2="27.90"
-      y2="27.90"
-      stroke-width="0"></line>
-    <line
-      class="line"
-      x1="10.22"
-      y1="25.78"
-      x2="8.10"
-      y2="27.90"
-      stroke-width="0"></line>
-    <line
-      class="line"
-      x1="10.22"
-      y1="10.22"
-      x2="8.10"
-      y2="8.10"
-      stroke-width="0"></line>
-    <line
-      class="line"
-      x1="25.78"
-      y1="10.22"
-      x2="27.90"
-      y2="8.10"
-      stroke-width="0"></line>
+  >
+    <path class="circle" d="M18 9 a6 6, 0, 0 0, 9 9, 9 9 0 1 1-9-9"></path>
+
+    <g class="star">
+      <path d="M26 8 v4"></path>
+      <path d="M28 10 h-4"></path>
+    </g>
+
+    <g class="sun-rays" stroke-width="0">
+      <line class="line" x1="18" y1="29" x2="18" y2="32"></line>
+      <line class="line" x1="18" y1="7" x2="18" y2="4"></line>
+      <line class="line" x1="4" y1="18" x2="7" y2="18"></line>
+      <line class="line" x1="32" y1="18" x2="29" y2="18"></line>
+      <line class="line" x1="25.78" y1="25.78" x2="27.90" y2="27.90"></line>
+      <line class="line" x1="10.22" y1="25.78" x2="8.10" y2="27.90"></line>
+      <line class="line" x1="10.22" y1="10.22" x2="8.10" y2="8.10"></line>
+      <line class="line" x1="25.78" y1="10.22" x2="27.90" y2="8.10"></line>
+    </g>
   </svg>
 </button>
 
@@ -63,36 +45,38 @@ const { class: className } = Astro.props;
   #themeToggle {
     border: 0;
     background: none;
+
+    .circle {
+      transition:
+        d var(--spring),
+        scale var(--spring) 150ms,
+        stroke-width var(--spring) 150ms;
+      transform-origin: center;
+    }
+
+    .star {
+      transition: stroke-width var(--spring) 150ms;
+    }
+
+    .sun-rays {
+      transition: stroke-width var(--spring) 150ms;
+    }
   }
 
-  #themeToggle .circle {
-    transition:
-      d var(--spring),
-      scale var(--spring) 150ms,
-      stroke-width var(--spring) 150ms;
-    transform-origin: center;
-  }
+  :global(.dark) #themeToggle {
+    .circle {
+      d: path("M18 9 a9 9, 0, 0 1, 9 9, 9 9 0 1 1-9-9");
+      scale: 0.65;
+      stroke-width: 3.5;
+    }
 
-  #themeToggle .star {
-    transition: stroke-width var(--spring) 150ms;
-  }
+    .sun-rays {
+      stroke-width: 3;
+    }
 
-  :global(.dark) #themeToggle .circle {
-    d: path("M18 9 a9 9, 0, 0 1, 9 9, 9 9 0 1 1-9-9");
-    scale: 0.65;
-    stroke-width: 3.5;
-  }
-
-  #themeToggle .line {
-    transition: stroke-width var(--spring) 150ms;
-  }
-
-  :global(.dark) #themeToggle .line {
-    stroke-width: 3;
-  }
-
-  :global(.dark) #themeToggle .star {
-    stroke-width: 0;
+    .star {
+      stroke-width: 0;
+    }
   }
 </style>
 
