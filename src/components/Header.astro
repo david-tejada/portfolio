@@ -1,42 +1,63 @@
 ---
-import IconGithub from "../components/IconGithub.astro";
-import IconLinkedin from "../components/IconLinkedin.astro";
-import IconYoutube from "../components/IconYoutube.astro";
+import HamburgerButton from "../components/HamburgerButton.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<header class="py-12">
-  <div class="flex grow items-center">
-    <p class="text-lg font-bold">
-      <a href="/" class="hover:text-orange-600">David Tejada</a>
-    </p>
-    <div class="grow">
-      <ThemeToggle />
-    </div>
-    <nav class="">
-      <ul class="flex items-center gap-4">
-        <li class="ml-auto">
-          <a
-            href="https://www.linkedin.com/in/david-mart%C3%ADnez-tejada-662880287/"
-            class="hover:text-orange-600"
-            ><span class="sr-only">LinkedIn</span><IconLinkedin /></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/david-tejada"
-            class="hover:text-orange-600"
-            ><span class="sr-only">GitHub</span><IconGithub /></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.youtube.com/@david-tejada"
-            class="hover:text-orange-600"
-            ><span class="sr-only">YouTube</span><IconYoutube /></a
-          >
-        </li>
+<header class="fixed top-0 right-0 left-0 px-8 py-8 sm:px-16">
+  <div class="space-around flex grow max-sm:gap-8">
+    <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
+      <HamburgerButton
+        id="menu-button"
+        class="peer relative z-100 sm:hidden"
+        size="36"
+      />
+      <div
+        id="menu-overlay"
+        class="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-300 peer-aria-expanded:pointer-events-auto peer-aria-expanded:opacity-50"
+      >
+      </div>
+      <ul
+        class="flex items-center justify-center gap-12 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0 max-sm:dark:bg-slate-800"
+      >
+        <li><a href="/">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <ThemeToggle class="max-sm:z-1 max-sm:mr-auto max-sm:ml-0" />
   </div>
 </header>
+
+<script>
+  const mainNavigationList = document.querySelector("#main-navigation ul");
+  const menuButton = document.querySelector("#menu-button");
+  const menuOverlay = document.querySelector("#menu-overlay");
+  const menuLinks = document.querySelectorAll("#main-navigation a");
+
+  mainNavigationList.addEventListener("touchmove", (event) => {
+    event.preventDefault();
+  });
+
+  document.addEventListener("scroll", () => {
+    closeNavigationMenu();
+  });
+
+  menuOverlay.addEventListener("click", () => {
+    closeNavigationMenu();
+  });
+
+  menuOverlay.addEventListener("touchmove", () => {
+    closeNavigationMenu();
+  });
+
+  for (const link of menuLinks) {
+    link.addEventListener("click", () => {
+      closeNavigationMenu();
+    });
+  }
+
+  function closeNavigationMenu() {
+    menuButton.ariaExpanded = "false";
+  }
+</script>
