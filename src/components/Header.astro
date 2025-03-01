@@ -13,7 +13,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       />
       <div
         id="menu-overlay"
-        class="pointer-events-none fixed inset-0 bg-black opacity-0 transition-opacity duration-300 peer-aria-expanded:pointer-events-auto peer-aria-expanded:opacity-50"
+        class="pointer-events-none fixed inset-0 transition-[backdrop-filter] duration-300 peer-aria-expanded:pointer-events-auto"
       >
       </div>
       <ul
@@ -28,6 +28,16 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     <ThemeToggle class="max-sm:z-1 max-sm:mr-auto max-sm:ml-0" />
   </div>
 </header>
+
+<style>
+  :global([aria-expanded="true"]) ~ #menu-overlay {
+    backdrop-filter: blur(5px) brightness(0.7);
+  }
+
+  :global([aria-expanded="true"]) ~ ul {
+    box-shadow: -3px 0px 25px 5px rgba(0, 0, 0, 0.15);
+  }
+</style>
 
 <script>
   const mainNavigationList = document.querySelector("#main-navigation ul");
