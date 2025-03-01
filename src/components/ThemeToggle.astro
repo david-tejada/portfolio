@@ -42,41 +42,39 @@ const { class: className } = Astro.props;
     spring: spring(0.5, 0.7),
   }}
 >
-  #themeToggle {
+  button {
     border: 0;
     background: none;
-
-    .circle {
-      transition:
-        d var(--spring),
-        scale var(--spring) 150ms,
-        stroke-width var(--spring) 150ms;
-      transform-origin: center;
-    }
-
-    .star {
-      transition: stroke-width var(--spring) 150ms;
-    }
-
-    .sun-rays {
-      transition: stroke-width var(--spring) 150ms;
-    }
   }
 
-  :global(.dark) #themeToggle {
-    .circle {
-      d: path("M18 9 a9 9, 0, 0 1, 9 9, 9 9 0 1 1-9-9");
-      scale: 0.65;
-      stroke-width: 3.5;
-    }
+  svg .circle {
+    transition:
+      d var(--spring),
+      scale var(--spring) 150ms,
+      stroke-width var(--spring) 150ms;
+    transform-origin: center;
+  }
 
-    .sun-rays {
-      stroke-width: 3;
-    }
+  svg .star {
+    transition: stroke-width var(--spring) 150ms;
+  }
 
-    .star {
-      stroke-width: 0;
-    }
+  svg .sun-rays {
+    transition: stroke-width var(--spring) 150ms;
+  }
+
+  :global(.dark) svg .circle {
+    d: path("M18 9 a9 9, 0, 0 1, 9 9, 9 9 0 1 1-9-9");
+    scale: 0.65;
+    stroke-width: 3.5;
+  }
+
+  :global(.dark) svg .star {
+    stroke-width: 0;
+  }
+
+  :global(.dark) svg .sun-rays {
+    stroke-width: 3;
   }
 </style>
 
