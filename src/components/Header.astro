@@ -4,7 +4,8 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
 <header class="fixed top-0 right-0 left-0 px-8 py-8 sm:px-16">
-  <div class="space-around flex grow max-sm:gap-8">
+  <div class="backdrop"></div>
+  <div class="space-around relative z-10 flex grow max-sm:gap-8">
     <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
       <HamburgerButton
         id="menu-button"
@@ -37,6 +38,23 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 
   :global([aria-expanded="true"]) ~ ul {
     box-shadow: -3px 0px 25px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    height: 200%;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 50%);
+    background: linear-gradient(to bottom, white 0%, transparent 50%);
+  }
+
+  :global(.dark) .backdrop {
+    background: linear-gradient(
+      to bottom,
+      var(--color-slate-800) 0%,
+      transparent 50%
+    );
   }
 </style>
 
