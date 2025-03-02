@@ -31,6 +31,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 
 <style>
   :global([aria-expanded="true"]) ~ #menu-overlay {
+    -webkit-backdrop-filter: blur(5px) brightness(0.7);
     backdrop-filter: blur(5px) brightness(0.7);
   }
 
