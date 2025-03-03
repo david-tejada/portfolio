@@ -20,7 +20,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="text-lg text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+  <body class="text-lg text-slate-600 dark:bg-slate-800 dark:text-slate-100">
     <Header />
     <slot />
     <Footer />
@@ -31,6 +31,12 @@ const { title } = Astro.props;
   :root {
     --header-height: 4rem;
     --header-margin-top: 2rem;
+
+    --color-accent: var(--color-violet-700);
+  }
+
+  :global(.dark) {
+    --color-accent: var(--color-green-500);
   }
 
   body {
