@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Portfolio - David Tejada">
   <main class="col-[content]">
-    <div class="grid min-h-[max(100vh,600px)] content-center">
+    <div class="hero grid content-center">
       <h1 class="mb-4 max-w-[30ch] text-4xl sm:text-7xl">
         <div class="mb-4 text-lg text-violet-700 dark:text-green-500">
           Hola, my name is
@@ -148,3 +148,12 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </main>
 </Layout>
+
+<style>
+  .hero {
+    min-height: max(
+      100vh - var(--header-height) - var(--header-margin-top),
+      400px
+    );
+  }
+</style>

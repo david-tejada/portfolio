@@ -3,9 +3,11 @@ import HamburgerButton from "../components/HamburgerButton.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 ---
 
-<header class="fixed top-0 right-0 left-0 px-8 py-8 sm:px-16">
+<header
+  class="sticky top-0 col-[full-width] mt-8 flex h-16 items-center px-8 py-4 sm:px-16"
+>
   <div class="backdrop"></div>
-  <div class="space-around relative z-10 flex grow max-sm:gap-8">
+  <div class="space-around relative z-10 flex grow items-center max-sm:gap-8">
     <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
       <HamburgerButton
         id="menu-button"
