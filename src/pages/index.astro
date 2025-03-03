@@ -28,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     <div>
-      <h2 class="mt-24 text-3xl font-bold">About Me</h2>
+      <h2 id="about" class="mt-24 text-3xl font-bold">About Me</h2>
       <p class="mt-4 leading-relaxed">
         I first started programming when I was in university. I started learning
         C++ and found it very enjoyable. I even made my final degree project
@@ -155,5 +155,9 @@ import Layout from "../layouts/Layout.astro";
       100vh - var(--header-height) - var(--header-margin-top),
       400px
     );
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
   }
 </style>
