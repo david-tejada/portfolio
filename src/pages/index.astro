@@ -6,135 +6,145 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portfolio - David Tejada">
-  <div class="grid min-h-[max(100vh,600px)] content-center">
-    <h1 class="mb-4 max-w-[30ch] text-4xl sm:text-7xl">
-      <div class="mb-4 text-lg text-violet-700 dark:text-green-500">
-        Hola, my name is
-      </div>
-      <span class="font-bold text-slate-700 dark:text-slate-100"
-        >David Tejada.</span
+  <main class="col-[content]">
+    <div class="grid min-h-[max(100vh,600px)] content-center">
+      <h1 class="mb-4 max-w-[30ch] text-4xl sm:text-7xl">
+        <div class="mb-4 text-lg text-violet-700 dark:text-green-500">
+          Hola, my name is
+        </div>
+        <span class="font-bold text-slate-700 dark:text-slate-100"
+          >David Tejada.</span
+        >
+      </h1>
+      <h2 class="mb-4 text-4xl font-bold sm:text-7xl">
+        I create things for the web.
+      </h2>
+      <p class="max-w-[45ch] leading-relaxed sm:text-xl">
+        I'm a front-end developer and the creator of <a
+          href="https://rango.click"
+          class="underline">Rango</a
+        >, a browser extension helping thousands navigate the web by voice.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="mt-24 text-3xl font-bold">About Me</h2>
+      <p class="mt-4 leading-relaxed">
+        I first started programming when I was in university. I started learning
+        C++ and found it very enjoyable. I even made my final degree project
+        using C++.
+      </p>
+
+      <p class="mt-4 leading-relaxed">
+        It wasn't until years later that I did my first incursion in web
+        development. It was around 2008. I had created a small community of
+        photography enthusiast and I made a website composed of a blog and a
+        forum to share our pictures and experiences. I remember that I used
+        Joomla and that in order to create rounded corners you had to use
+        background images. Fun times!
+      </p>
+
+      <p class="mt-4 leading-relaxed">
+        More recently I decided to focus my efforts on becoming a software
+        developer. It was something that I missed and that I was passionate
+        about. My first big project was a browser extension. I had started using
+        voice to control my computer and one thing that I found lacking was the
+        ability to easily control the browser by voice. The solutions up to that
+        point were unsatisfying to me. So I set myself to create something
+        better. It took me hundreds of hours and had to overcome many challenges
+        but I am very happy with the result. Rango, the extension to control
+        your browser by voice is used by me and a several hundred other people
+        everyday.
+      </p>
+
+      <p class="mt-4">
+        When I'm not coding I enjoy taking walks to the beach, walking my cats
+        (Yes, with a leash!) and eating pizza.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="mt-24 text-3xl font-bold">My Skills</h2>
+      <p class="mt-4 leading-relaxed">
+        These are the technologies I am more familiar with. Some I have used
+        more than others but I feel fairly confident in all of them:
+      </p>
+
+      <ul class="mt-4 flex flex-wrap gap-4">
+        <li><Tag>Javascript</Tag></li>
+        <li><Tag>Typescript</Tag></li>
+        <li><Tag>WebExtensions API</Tag></li>
+        <li><Tag>React</Tag></li>
+        <li><Tag>NextJS</Tag></li>
+        <li><Tag>HTML & CSS</Tag></li>
+        <li><Tag>Tailwind</Tag></li>
+        <li><Tag>SASS</Tag></li>
+        <li><Tag>Git</Tag></li>
+        <li><Tag>Python</Tag></li>
+      </ul>
+
+      <p class="mt-4 leading-relaxed">I also speak these languages:</p>
+
+      <ul class="mt-4 flex flex-wrap gap-4">
+        <li><Pill left="Spanish" right="native" /></li>
+        <li><Pill left="English" right="proficient" /></li>
+        <li><Pill left="German" right="advanced" /></li>
+        <li><Pill left="French" right="intermediate" /></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="mt-24 text-3xl font-bold">My Work</h2>
+
+      <p class="mt-4 leading-relaxed">
+        This is a selection of the work I'm proud of. From a browser extension
+        used by hundreds of people every day, to websites and webapps created to
+        hone my skills.
+      </p>
+
+      <Card
+        title="Rango"
+        description="A browser extension used by hundreds of people every day to navigate webpages and control their browsers by voice."
+        href="projects/rango"
       >
-    </h1>
-    <h2 class="mb-4 text-4xl font-bold sm:text-7xl">
-      I create things for the web.
-    </h2>
-    <p class="max-w-[45ch] leading-relaxed sm:text-xl">
-      I'm a front-end developer and the creator of <a
-        href="https://rango.click"
-        class="underline">Rango</a
-      >, a browser extension helping thousands navigate the web by voice.
-    </p>
-  </div>
+        <img src="/logo-rango.svg" alt="" class="mx-auto size-32" />
+      </Card>
 
-  <h2 class="mt-24 text-3xl font-bold">About Me</h2>
-  <p class="mt-4 leading-relaxed">
-    I first started programming when I was in university. I started learning C++
-    and found it very enjoyable. I even made my final degree project using C++.
-  </p>
+      <Card
+        title="kanban board"
+        description="A kanban board web app. Coded based off the designs provided by Frontend Mentor."
+        href="projects/kanban-board"
+      >
+        <img
+          src="/logo-kanban.svg"
+          alt=""
+          class="mx-auto size-32 rounded-md bg-[hsl(235deg,16%,15%)] object-contain p-4"
+        />
+      </Card>
 
-  <p class="mt-4 leading-relaxed">
-    It wasn't until years later that I did my first incursion in web
-    development. It was around 2008. I had created a small community of
-    photography enthusiast and I made a website composed of a blog and a forum
-    to share our pictures and experiences. I remember that I used Joomla and
-    that in order to create rounded corners you had to use background images.
-    Fun times!
-  </p>
+      <Card
+        title="myteam"
+        description="A full website comprised of home, about and contact pages. Coded based off the designs provided by Frontend Mentor."
+        href="projects/myteam"
+      >
+        <img
+          src="/logo-myteam.svg"
+          alt=""
+          class="mx-auto size-32 rounded-md bg-[rgb(1,77,86)] object-contain p-4"
+        />
+      </Card>
 
-  <p class="mt-4 leading-relaxed">
-    More recently I decided to focus my efforts on becoming a software
-    developer. It was something that I missed and that I was passionate about.
-    My first big project was a browser extension. I had started using voice to
-    control my computer and one thing that I found lacking was the ability to
-    easily control the browser by voice. The solutions up to that point were
-    unsatisfying to me. So I set myself to create something better. It took me
-    hundreds of hours and had to overcome many challenges but I am very happy
-    with the result. Rango, the extension to control your browser by voice is
-    used by me and a several hundred other people everyday.
-  </p>
-
-  <p class="mt-4">
-    When I'm not coding I enjoy taking walks to the beach, walking my cats (Yes,
-    with a leash!) and eating pizza.
-  </p>
-
-  <h2 class="mt-24 text-3xl font-bold">My Skills</h2>
-  <p class="mt-4 leading-relaxed">
-    These are the technologies I am more familiar with. Some I have used more
-    than others but I feel fairly confident in all of them:
-  </p>
-
-  <ul class="mt-4 flex flex-wrap gap-4">
-    <li><Tag>Javascript</Tag></li>
-    <li><Tag>Typescript</Tag></li>
-    <li><Tag>WebExtensions API</Tag></li>
-    <li><Tag>React</Tag></li>
-    <li><Tag>NextJS</Tag></li>
-    <li><Tag>HTML & CSS</Tag></li>
-    <li><Tag>Tailwind</Tag></li>
-    <li><Tag>SASS</Tag></li>
-    <li><Tag>Git</Tag></li>
-    <li><Tag>Python</Tag></li>
-  </ul>
-
-  <p class="mt-4 leading-relaxed">I also speak these languages:</p>
-
-  <ul class="mt-4 flex flex-wrap gap-4">
-    <li><Pill left="Spanish" right="native" /></li>
-    <li><Pill left="English" right="proficient" /></li>
-    <li><Pill left="German" right="advanced" /></li>
-    <li><Pill left="French" right="intermediate" /></li>
-  </ul>
-
-  <h2 class="mt-24 text-3xl font-bold">My Work</h2>
-
-  <p class="mt-4 leading-relaxed">
-    This is a selection of the work I'm proud of. From a browser extension used
-    by hundreds of people every day, to websites and webapps created to hone my
-    skills.
-  </p>
-
-  <Card
-    title="Rango"
-    description="A browser extension used by hundreds of people every day to navigate webpages and control their browsers by voice."
-    href="projects/rango"
-  >
-    <img src="/logo-rango.svg" alt="" class="mx-auto size-32" />
-  </Card>
-
-  <Card
-    title="kanban board"
-    description="A kanban board web app. Coded based off the designs provided by Frontend Mentor."
-    href="projects/kanban-board"
-  >
-    <img
-      src="/logo-kanban.svg"
-      alt=""
-      class="mx-auto size-32 rounded-md bg-[hsl(235deg,16%,15%)] object-contain p-4"
-    />
-  </Card>
-
-  <Card
-    title="myteam"
-    description="A full website comprised of home, about and contact pages. Coded based off the designs provided by Frontend Mentor."
-    href="projects/myteam"
-  >
-    <img
-      src="/logo-myteam.svg"
-      alt=""
-      class="mx-auto size-32 rounded-md bg-[rgb(1,77,86)] object-contain p-4"
-    />
-  </Card>
-
-  <Card
-    title="talon-filetree"
-    description="I am the main contributor for this open source vscode extension that helps users navigate files by voice."
-    href="projects/talon-filetree"
-  >
-    <img
-      src="/logo-filetree.svg"
-      alt=""
-      class="mx-auto size-32 rounded-md bg-sky-800 object-contain p-4"
-    />
-  </Card>
+      <Card
+        title="talon-filetree"
+        description="I am the main contributor for this open source vscode extension that helps users navigate files by voice."
+        href="projects/talon-filetree"
+      >
+        <img
+          src="/logo-filetree.svg"
+          alt=""
+          class="mx-auto size-32 rounded-md bg-sky-800 object-contain p-4"
+        />
+      </Card>
+    </div>
+  </main>
 </Layout>
