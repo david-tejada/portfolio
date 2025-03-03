@@ -78,7 +78,8 @@ const { class: className } = Astro.props;
   }
 </style>
 
-<script>
+<!-- This needs to load right away to avoid having a flash of the wrong theme -->
+<script is:inline>
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
