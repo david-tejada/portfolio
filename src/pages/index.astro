@@ -175,9 +175,12 @@ import Layout from "../layouts/Layout.astro";
     --perspective-x: -3;
     --perspective-y: -2;
 
-    -webkit-text-stroke: 1px var(--color-accent);
     font-family: Impact, Anton, sans-serif;
     text-shadow:
+      -1px 1px 0 var(--color-accent),
+      0 1px 0 var(--color-accent),
+      1px 1px 0 var(--color-accent),
+      -1px -1px 0 var(--color-accent),
       calc(-0.02em * (1 + var(--perspective-x)))
         calc(0.02em * (1 + var(--perspective-y))) 0 var(--color-accent),
       calc(-0.04em * (1 + var(--perspective-x)))
@@ -186,6 +189,5 @@ import Layout from "../layouts/Layout.astro";
         calc(0.06em * (1 + var(--perspective-y))) 0 var(--color-accent);
 
     letter-spacing: 2px;
-    paint-order: stroke fill;
   }
 </style>
