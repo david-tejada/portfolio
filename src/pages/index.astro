@@ -176,7 +176,7 @@ import Layout from "../layouts/Layout.astro";
     --perspective-y: -2;
 
     -webkit-text-stroke: 1px var(--color-accent);
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: Impact, Anton, sans-serif;
     text-shadow:
       calc(-0.02em * (1 + var(--perspective-x)))
         calc(0.02em * (1 + var(--perspective-y))) 0 var(--color-accent),
@@ -184,5 +184,8 @@ import Layout from "../layouts/Layout.astro";
         calc(0.04em * (1 + var(--perspective-y))) 0 var(--color-accent),
       calc(-0.06em * (1 + var(--perspective-x)))
         calc(0.06em * (1 + var(--perspective-y))) 0 var(--color-accent);
+
+    letter-spacing: 2px;
+    paint-order: stroke fill;
   }
 </style>
