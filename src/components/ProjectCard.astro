@@ -1,7 +1,6 @@
 ---
 interface Props {
   title: string;
-  description: string;
   url: string;
   repoUrl: string;
   liveUrl: string;
@@ -10,16 +9,8 @@ interface Props {
   tags: string[];
 }
 
-const {
-  title,
-  description,
-  url,
-  repoUrl,
-  liveUrl,
-  tags,
-  image,
-  imageDark,
-}: Props = Astro.props;
+const { title, url, repoUrl, liveUrl, tags, image, imageDark }: Props =
+  Astro.props;
 ---
 
 <div class="card relative mt-12 border-t-[0.1px] border-transparent">
