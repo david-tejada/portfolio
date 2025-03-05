@@ -7,20 +7,30 @@ interface Props {
   image: string;
   imageDark: string;
   tags: string[];
+  reverse?: boolean;
 }
 
-const { title, url, repoUrl, liveUrl, tags, image, imageDark }: Props =
+const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
   Astro.props;
 ---
 
 <div class="card relative mt-24 border-t-[0.1px] border-transparent">
   <a
     href={url}
-    class="card-image absolute right-0 block h-[calc(100%-var(--card-offset-y))] overflow-hidden rounded-xl border border-(--color-accent)"
+    class:list={[
+      "card-image",
+      { "right-0": !reverse },
+      { "left-0": reverse },
+      "absolute block h-[calc(100%-var(--card-offset-y))] overflow-hidden rounded-xl border border-(--color-accent)",
+    ]}
   >
   </a>
   <div
-    class="card-content isolate z-10 mt-(--card-offset-y) rounded-xl border border-(--color-accent) bg-white p-8 dark:bg-slate-800"
+    class:list={[
+      "card-content",
+      { "ml-auto": reverse },
+      "isolate z-10 mt-(--card-offset-y) rounded-xl border border-(--color-accent) bg-white p-8 dark:bg-slate-800",
+    ]}
   >
     <h3 class="mt-8 text-3xl">
       <a href={url}>{title}</a>
