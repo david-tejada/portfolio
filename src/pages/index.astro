@@ -1,5 +1,4 @@
 ---
-import Card from "../components/Card.astro";
 import Pill from "../components/Pill.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Tag from "../components/Tag.astro";
@@ -100,29 +99,36 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </ProjectCard>
 
-      <Card
+      <ProjectCard
         title="myteam"
-        description="A full website comprised of home, about and contact pages. Coded based off the designs provided by Frontend Mentor."
-        href="projects/myteam"
+        url="projects/myteam"
+        repoUrl="https://github.com/david-tejada/frontendmentor-challenges/tree/main/18-myteam-multi-page-website"
+        liveUrl="https://frontendmentor-challenges-khaki.vercel.app/"
+        image="/screenshot-myteam.png"
+        imageDark="/screenshot-myteam.png"
+        tags={["Typescript", "React", "NextJS", "CSS", "HTML", "Tailwind"]}
       >
-        <img
-          src="/logo-myteam.svg"
-          alt=""
-          class="mx-auto size-32 rounded-md bg-[rgb(1,77,86)] object-contain p-4"
-        />
-      </Card>
+        <p class="mt-8 leading-relaxed">
+          A full website comprised of home, about and contact pages. Coded based
+          off the designs provided by Frontend Mentor.
+        </p>
+      </ProjectCard>
 
-      <Card
+      <ProjectCard
         title="talon-filetree"
-        description="I am the main contributor for this open source vscode extension that helps users navigate files by voice."
-        href="projects/talon-filetree"
+        url="projects/talon-filetree"
+        repoUrl="https://github.com/paul-schaaf/talon-filetree"
+        liveUrl="https://marketplace.visualstudio.com/items?itemName=PaulSchaaf.talon-filetree"
+        image="/screenshot-talon-filetree.png"
+        imageDark="/screenshot-talon-filetree-dark.png"
+        tags={["Typescript", "VSCode", "VSCode API", "Talon"]}
+        reverse
       >
-        <img
-          src="/logo-filetree.svg"
-          alt=""
-          class="mx-auto size-32 rounded-md bg-sky-800 object-contain p-4"
-        />
-      </Card>
+        <p class="mt-8 leading-relaxed">
+          I am the main contributor for this open source vscode extension that
+          helps users navigate files by voice.
+        </p>
+      </ProjectCard>
     </div>
 
     <div>
