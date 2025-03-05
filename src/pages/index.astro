@@ -239,34 +239,3 @@ import Layout from "../layouts/Layout.astro";
     letter-spacing: 2px;
   }
 </style>
-
-<style>
-  .card-image,
-  .card-content {
-    width: min(100% - 20px, 45ch);
-  }
-
-  .card {
-    --card-offset-y: 50px;
-  }
-
-  .card-image {
-    background-image: url("/screenshot-rango.png");
-    background-color: var(--color-accent);
-    background-size: cover;
-    /* background-position: 25%; */
-    background-blend-mode: luminosity;
-    transition: background-color 0.3s ease-in-out;
-    border: 1px solid var(--color-accent);
-    /* height: calc(100% - var(--card-offset-y)); */
-  }
-
-  .card:hover .card-image {
-    background-color: transparent;
-  }
-
-  :global(.dark) .card-image {
-    background-image: url("/screenshot-rango-dark.png");
-    background-blend-mode: darken;
-  }
-</style>
