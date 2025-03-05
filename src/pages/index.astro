@@ -76,17 +76,20 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </ProjectCard>
 
-      <Card
+      <ProjectCard
         title="kanban board"
-        description="A kanban board web app. Coded based off the designs provided by Frontend Mentor."
-        href="projects/kanban-board"
+        url="projects/kanban-board"
+        repoUrl="https://github.com/david-tejada/fem-kanban-task-management"
+        liveUrl="https://dt-fem-kanban-task-management.netlify.app"
+        image="/screenshot-kanban.png"
+        imageDark="/screenshot-kanban-dark.png"
+        tags={["React", "TypeScript", "Tailwind", "NextJS"]}
       >
-        <img
-          src="/logo-kanban.svg"
-          alt=""
-          class="mx-auto size-32 rounded-md bg-[hsl(235deg,16%,15%)] object-contain p-4"
-        />
-      </Card>
+        <p class="mt-8 leading-relaxed">
+          A kanban board web app. Coded based off the designs provided by
+          Frontend Mentor.
+        </p>
+      </ProjectCard>
 
       <Card
         title="myteam"
