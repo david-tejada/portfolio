@@ -43,3 +43,9 @@
   --font-syne: "Syne", sans-serif;
   --color-accent: var(--color-accent);
 }
+
+@layer components {
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+  }
+}
