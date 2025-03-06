@@ -1,0 +1,51 @@
+<div class="hero grid content-center">
+  <h1
+    class="display-text mb-4 text-7xl font-bold text-white uppercase md:text-9xl dark:text-slate-800"
+  >
+    David Tejada
+  </h1>
+  <h2 class="font-syne mb-4 text-4xl font-bold sm:text-8xl">
+    I create things for the web.
+  </h2>
+  <p class="max-w-[50ch] leading-relaxed sm:text-xl">
+    I am a frontend developer and the creator of <a
+      href="https://rango.click"
+      class="underline">Rango</a
+    >, a browser extension helping thousands navigate the web by voice. I am
+    currently looking for a new job opportunity.
+  </p>
+  <a
+    href="#contact"
+    class="mt-8 max-w-fit rounded border border-(--color-accent) px-12 py-4 font-bold text-(--color-accent)"
+    >Hire me!</a
+  >
+</div>
+
+<style>
+  .hero {
+    min-height: max(
+      100svh - 1 * (var(--header-height) + var(--header-margin-top)),
+      500px
+    );
+  }
+
+  .display-text {
+    --perspective-x: -3;
+    --perspective-y: -2;
+
+    font-family: Impact, Anton, sans-serif;
+    text-shadow:
+      -1px 1px 0 var(--color-accent),
+      0 1px 0 var(--color-accent),
+      1px 1px 0 var(--color-accent),
+      -1px -1px 0 var(--color-accent),
+      calc(-0.02em * (1 + var(--perspective-x)))
+        calc(0.02em * (1 + var(--perspective-y))) 0 var(--color-accent),
+      calc(-0.04em * (1 + var(--perspective-x)))
+        calc(0.04em * (1 + var(--perspective-y))) 0 var(--color-accent),
+      calc(-0.06em * (1 + var(--perspective-x)))
+        calc(0.06em * (1 + var(--perspective-y))) 0 var(--color-accent);
+
+    letter-spacing: 2px;
+  }
+</style>
