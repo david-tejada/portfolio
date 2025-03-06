@@ -8,36 +8,49 @@ import me from "../images/me.jpg";
   <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr]">
     <div>
       <p class="leading-relaxed">
-        I first started programming when I was in university. I started learning
-        C++ and found it very enjoyable. I even made my final degree project
-        using C++.
+        Hello! My name is David and I control my computer mostly using my voice.
+        In early 2022 I started building a browser extension called <a
+          href="https://rango.click"
+          class="text-accent"
+        >
+          Rango
+        </a>
+        that allows users to navigate the web by voice. Watch <a
+          href="https://www.youtube.com/watch?v=QYkjgd6_s4o&t=305s"
+          class="text-accent"
+        >
+          Salma Alam-Naylor talk to Kevin Powell</a
+        > about how much Rango has helped her when she needed it.
       </p>
 
       <p class="mt-4 leading-relaxed">
-        It wasn't until years later that I did my first incursion in web
-        development. It was around 2008. I had created a small community of
-        photography enthusiast and I made a website composed of a blog and a
-        forum to share our pictures and experiences. I remember that I used
-        Joomla and that in order to create rounded corners you had to use
-        background images. Fun times!
-      </p>
-
-      <p class="mt-4 leading-relaxed">
-        More recently I decided to focus my efforts on becoming a software
-        developer. It was something that I missed and that I was passionate
-        about. My first big project was a browser extension. I had started using
-        voice to control my computer and one thing that I found lacking was the
-        ability to easily control the browser by voice. The solutions up to that
-        point were unsatisfying to me. So I set myself to create something
-        better. It took me hundreds of hours and had to overcome many challenges
-        but I am very happy with the result. Rango, the extension to control
-        your browser by voice is used by me and a several hundred other people
-        everyday.
+        I enjoy building all kinds of different things using web technologies.
+        Here are some of the technologies a have been using recently:
+        <ul class="skills-list mt-4 grid grid-cols-2 pl-4 sm:grid-cols-3">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Tailwind</li>
+          <li>Jest</li>
+          <li>Puppeteer</li>
+          <li>Astro</li>
+          <li>Next.js</li>
+          <li>Python</li>
+        </ul>
       </p>
 
       <p class="mt-4">
-        When I'm not coding I enjoy taking walks to the beach, walking my cats
-        (Yes, with a leash!) and eating pizza.
+        I also enjoy learning languages. Apart from my native <strong
+          >Spanish</strong
+        >, I speak <strong>English</strong> fluently, <strong>German</strong>
+        conversational and a bit of <strong>French</strong>.
+      </p>
+
+      <p class="mt-4">
+        When I'm not coding you can probably find me walking my cats (pictured).
       </p>
     </div>
 
@@ -96,5 +109,13 @@ import me from "../images/me.jpg";
 
   .picture:hover:after {
     translate: 10px 10px;
+  }
+
+  .skills-list li:before {
+    content: "»";
+    position: relative;
+    top: -1px;
+    margin-right: 0.5rem;
+    color: var(--color-accent);
   }
 </style>
