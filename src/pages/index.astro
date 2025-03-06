@@ -1,9 +1,7 @@
 ---
 import About from "../components/About.astro";
 import Hero from "../components/Hero.astro";
-import Pill from "../components/Pill.astro";
 import Projects from "../components/Projects.astro";
-import Tag from "../components/Tag.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -12,35 +10,5 @@ import Layout from "../layouts/Layout.astro";
     <Hero />
     <Projects />
     <About />
-
-    <div>
-      <h2 class="font-syne mt-24 text-3xl font-bold">My Skills</h2>
-      <p class="mt-4 leading-relaxed">
-        These are the technologies I am more familiar with. Some I have used
-        more than others but I feel fairly confident in all of them:
-      </p>
-
-      <ul class="mt-4 flex flex-wrap gap-4">
-        <li><Tag>Javascript</Tag></li>
-        <li><Tag>TypeScript</Tag></li>
-        <li><Tag>WebExtensions API</Tag></li>
-        <li><Tag>React</Tag></li>
-        <li><Tag>NextJS</Tag></li>
-        <li><Tag>HTML & CSS</Tag></li>
-        <li><Tag>Tailwind</Tag></li>
-        <li><Tag>SASS</Tag></li>
-        <li><Tag>Git</Tag></li>
-        <li><Tag>Python</Tag></li>
-      </ul>
-
-      <p class="mt-4 leading-relaxed">I also speak these languages:</p>
-
-      <ul class="mt-4 flex flex-wrap gap-4">
-        <li><Pill left="Spanish" right="native" /></li>
-        <li><Pill left="English" right="proficient" /></li>
-        <li><Pill left="German" right="advanced" /></li>
-        <li><Pill left="French" right="intermediate" /></li>
-      </ul>
-    </div>
   </main>
 </Layout>
