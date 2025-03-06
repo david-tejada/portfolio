@@ -21,7 +21,7 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
       "card-image",
       { "right-0": !reverse },
       { "left-0": reverse },
-      "absolute block h-[calc(100%-var(--card-offset-y))] overflow-hidden rounded-xl border border-(--color-accent)",
+      "border-accent absolute block h-[calc(100%-var(--card-offset-y))] overflow-hidden rounded-xl border",
     ]}
   >
   </a>
@@ -29,7 +29,7 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
     class:list={[
       "card-content",
       { "ml-auto": reverse },
-      "isolate z-10 mt-(--card-offset-y) rounded-xl border border-(--color-accent) bg-white p-8 dark:bg-slate-800",
+      "border-accent isolate z-10 mt-(--card-offset-y) rounded-xl border bg-white p-8 dark:bg-slate-800",
     ]}
   >
     <h3 class="mt-8 text-3xl">

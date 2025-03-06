@@ -18,8 +18,28 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  :root {
+    --header-height: 4rem;
+    --header-margin-top: 2rem;
+
+    --color-accent: var(--color-violet-700);
+
+    :is(.dark *) {
+      --color-accent: var(--color-green-500);
+    }
+  }
+
+  @font-face {
+    font-family: "Syne";
+    src: url("/fonts/Syne-VariableFont_wght.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal italic;
+    font-display: block;
+  }
 }
 
 @theme {
   --font-syne: "Syne", sans-serif;
+  --color-accent: var(--color-accent);
 }
