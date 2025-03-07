@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Message sent successfully">
+  <main class="content col-[content] grid content-center items-center">
+    <div
+      class="bg-background-secondary mx-auto max-w-[40ch] rounded-xl p-8 text-center"
+    >
+      <h1 class="text-3xl font-bold">Thanks for getting in touch!</h1>
+      <p class="mt-4">
+        Your message was sent successfully. I will get back to you as soon as
+        possible.
+      </p>
+      <p class="mt-8">
+        <a href="/" class="text-accent">Go back to the home page</a>
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .content {
+    min-height: max(
+      100svh - 1 * (var(--header-height) + var(--header-margin-top)),
+      500px
+    );
+  }
+
+  main > div {
+    box-shadow: 4px 4px 0px 0px var(--color-accent);
+  }
+</style>
