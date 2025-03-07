@@ -8,24 +8,21 @@ import me from "../images/me.webp";
   <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr]">
     <div>
       <p class="leading-relaxed">
-        Hello! My name is David and I control my computer mostly using my voice.
-        In early 2022 I started building a browser extension called <a
+        Hello! My name is David and I like building things using web
+        technologies. I control my computer mostly using my voice and in early
+        2022 I started building a browser extension called <a
           href="https://rango.click"
-          class="text-accent"
+          class="text-accent">Rango</a
         >
-          Rango
-        </a>
         that allows users to navigate the web by voice. Watch <a
           href="https://www.youtube.com/watch?v=QYkjgd6_s4o&t=305s"
-          class="text-accent"
-        >
-          Salma Alam-Naylor talk to Kevin Powell</a
+          class="text-accent">Salma Alam-Naylor talk to Kevin Powell</a
         > about how much Rango has helped her when she needed it.
       </p>
 
       <p class="mt-4 leading-relaxed">
-        I enjoy building all kinds of different things using web technologies.
-        Here are some of the technologies a have been using recently:
+        I enjoy building things using all kinds of different technologies. Here
+        are some of the ones I have been using recently:
         <ul class="skills-list mt-4 grid grid-cols-2 pl-4 sm:grid-cols-3">
           <li>HTML</li>
           <li>CSS</li>
@@ -42,7 +39,13 @@ import me from "../images/me.webp";
         </ul>
       </p>
 
-      <p class="mt-4">
+      <p class="mt-4 leading-relaxed">
+        I have always been interested in technology and I have a degree in <strong
+          >electronic engineering</strong
+        > by the Universidad Politécnica de Valencia.
+      </p>
+
+      <p class="mt-4 leading-relaxed">
         I also enjoy learning languages. Apart from my native <strong
           >Spanish</strong
         >, I speak fluent <strong>English</strong>, conversational <strong
@@ -64,56 +67,56 @@ import me from "../images/me.webp";
       </div>
     </div>
   </div>
+
+  <style>
+    .picture {
+      position: relative;
+      transition: translate 0.2s ease-in-out;
+    }
+
+    .picture:hover {
+      translate: -5px -5px;
+    }
+
+    .picture:before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-xl);
+      background: var(--color-accent);
+      opacity: 20%;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .picture:hover:before {
+      opacity: 0%;
+    }
+
+    .picture:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      right: -10px;
+      left: 10px;
+      top: 10px;
+      bottom: -10px;
+      border-radius: 0.75rem;
+      border: 2px solid var(--color-accent);
+      transition: translate 0.2s ease-in-out;
+    }
+
+    .picture:hover:after {
+      translate: 10px 10px;
+    }
+
+    .skills-list li:before {
+      content: "»";
+      position: relative;
+      top: -1px;
+      margin-right: 0.5rem;
+      color: var(--color-accent);
+    }
+  </style>
 </section>
-
-<style>
-  .picture {
-    position: relative;
-    transition: translate 0.2s ease-in-out;
-  }
-
-  .picture:hover {
-    translate: -5px -5px;
-  }
-
-  .picture:before {
-    content: "";
-    display: block;
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-xl);
-    background: var(--color-accent);
-    opacity: 20%;
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  .picture:hover:before {
-    opacity: 0%;
-  }
-
-  .picture:after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    right: -10px;
-    left: 10px;
-    top: 10px;
-    bottom: -10px;
-    border-radius: 0.75rem;
-    border: 2px solid var(--color-accent);
-    transition: translate 0.2s ease-in-out;
-  }
-
-  .picture:hover:after {
-    translate: 10px 10px;
-  }
-
-  .skills-list li:before {
-    content: "»";
-    position: relative;
-    top: -1px;
-    margin-right: 0.5rem;
-    color: var(--color-accent);
-  }
-</style>
