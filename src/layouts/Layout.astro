@@ -20,7 +20,9 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="text-lg text-slate-600 dark:bg-slate-800 dark:text-slate-200">
+  <body
+    class="min-h-svh text-lg text-slate-600 dark:bg-slate-800 dark:text-slate-200"
+  >
     <Header />
     <slot />
     <Footer />
@@ -33,5 +35,6 @@ const { title } = Astro.props;
     grid-template-columns:
       [full-width-start] auto [content-start] min(60rem, 100% - 4rem)
       [content-end] auto [full-width-end];
+    grid-template-rows: auto 1fr auto;
   }
 </style>
