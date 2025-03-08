@@ -18,10 +18,10 @@ const email = "devtejada@gmail.com";
         below.
       </p>
 
-      <div class="mt-8 flex gap-1">
+      <div class="mt-4 flex gap-1">
         <a
           href={`mailto:${email}`}
-          class="bg-background-secondary text-accent grow rounded-l p-2 text-center"
+          class="border-accent text-accent grow rounded-l-xl border border-dashed p-2 text-center"
         >
           {email}
         </a>
@@ -29,7 +29,7 @@ const email = "devtejada@gmail.com";
           id="copy-email"
           aria-label="Copy email address to the clipboard"
           data-email={email}
-          class="bg-background-secondary text-accent rounded-r p-2"
+          class="border-accent text-accent rounded-r-xl border border-dashed p-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const email = "devtejada@gmail.com";
       method="POST"
       action="/success"
       data-netlify="true"
-      class="bg-background-secondary rounded-xl p-8"
+      class="border-accent rounded-xl border p-4"
     >
       <div class="grid">
         <label for="name">Name</label>
@@ -146,6 +146,10 @@ const email = "devtejada@gmail.com";
 </script>
 
 <style>
+  form {
+    box-shadow: 5px 5px 0px 0px var(--color-accent);
+  }
+
   button[type="submit"] svg {
     transition: translate 0.2s ease-in-out;
   }
