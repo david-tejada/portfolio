@@ -44,6 +44,7 @@
 
   p a {
     text-decoration: underline;
+    color: var(--color-accent);
   }
 }
 

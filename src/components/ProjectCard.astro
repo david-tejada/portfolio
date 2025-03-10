@@ -38,15 +38,15 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
 
     <slot />
 
-    <p class="mt-8 flex flex-wrap gap-2 text-sm">
+    <div class="mt-8 flex flex-wrap gap-2 text-sm">
       {
         tags.map((tag) => (
           <span class="rounded border border-current px-2 py-1">{tag}</span>
         ))
       }
-    </p>
+    </div>
 
-    <p class="mt-8 flex gap-4 text-sm">
+    <div class="mt-8 flex gap-4 text-sm">
       <a href={repoUrl}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
           ></path></svg
         >
       </a>
-    </p>
+    </div>
   </div>
 </div>
 
