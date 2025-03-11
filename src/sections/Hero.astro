@@ -1,3 +1,7 @@
+---
+import { spring } from "motion";
+---
+
 <section aria-labelledby="hero" class="hero grid content-center text-center">
   <h1
     id="hero"
@@ -40,7 +44,11 @@
   >
 </section>
 
-<style>
+<style
+  define:vars={{
+    spring: spring(0.4, 0.7),
+  }}
+>
   @font-face {
     font-family: "Impact";
     src: url("/fonts/impact.woff2") format("woff2");
@@ -74,5 +82,15 @@
         calc(0.06em * (1 + var(--perspective-y))) 0 var(--color-accent);
 
     letter-spacing: 2px;
+  }
+
+  [href="#contact"] svg {
+    transition:
+      transform var(--spring),
+      scale var(--spring);
+  }
+
+  [href="#contact"]:hover svg {
+    transform: rotateY(360deg) scale(1.2);
   }
 </style>
