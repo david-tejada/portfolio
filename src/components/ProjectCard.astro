@@ -3,14 +3,13 @@ interface Props {
   title: string;
   url: string;
   repoUrl: string;
-  liveUrl: string;
   image: string;
   imageDark: string;
   tags: string[];
   reverse?: boolean;
 }
 
-const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
+const { title, url, repoUrl, tags, image, imageDark, reverse }: Props =
   Astro.props;
 ---
 
@@ -64,7 +63,7 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
           ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
         >
       </a>
-      <a href={liveUrl}>
+      <a href={url}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
