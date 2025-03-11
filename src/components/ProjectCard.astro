@@ -14,7 +14,7 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
   Astro.props;
 ---
 
-<div class="card relative mb-24 border-t-[0.1px] border-transparent">
+<article class="card relative mb-24 border-t-[0.1px] border-transparent">
   <a
     href={url}
     class:list={[
@@ -83,7 +83,7 @@ const { title, url, repoUrl, liveUrl, tags, image, imageDark, reverse }: Props =
       </a>
     </div>
   </div>
-</div>
+</article>
 
 <style
   define:vars={{ imageUrl: `url(${image})`, imageUrlDark: `url(${imageDark})` }}
