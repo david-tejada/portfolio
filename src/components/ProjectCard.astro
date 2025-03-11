@@ -16,6 +16,7 @@ const { title, url, repoUrl, tags, image, imageDark, reverse }: Props =
 <article class="card relative mb-24 border-t-[0.1px] border-transparent">
   <a
     href={url}
+    target="_blank"
     class:list={[
       "card-image",
       { "right-0": !reverse },
@@ -32,7 +33,7 @@ const { title, url, repoUrl, tags, image, imageDark, reverse }: Props =
     ]}
   >
     <h3 class="mt-8 text-3xl">
-      <a href={url}>{title}</a>
+      <a href={url} target="_blank">{title}</a>
     </h3>
 
     <slot />
@@ -46,7 +47,7 @@ const { title, url, repoUrl, tags, image, imageDark, reverse }: Props =
     </div>
 
     <div class="mt-8 flex gap-4 text-sm">
-      <a href={repoUrl}>
+      <a href={repoUrl} target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -63,7 +64,7 @@ const { title, url, repoUrl, tags, image, imageDark, reverse }: Props =
           ></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg
         >
       </a>
-      <a href={url}>
+      <a href={url} target="_blank">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
