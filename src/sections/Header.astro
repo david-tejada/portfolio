@@ -20,12 +20,36 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       >
       </div>
       <ul
-        class="max-sm:dark:bg-background flex items-center justify-center gap-12 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0"
+        class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0 sm:gap-12"
       >
-        <li><a href="/">Home</a></li>
-        <li><a href="/#work">Work</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li>
+          <a
+            href="/"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#work"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >Work</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#about"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#contact"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
     <ThemeToggle class="max-sm:z-1 max-sm:mr-auto max-sm:ml-0" />
