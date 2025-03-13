@@ -1,0 +1,21 @@
+---
+import IconCircleAlert from "./icons/IconCircleAlert.astro";
+
+const { label, name, required = true, className } = Astro.props;
+---
+
+<div class:list={["relative grid", className]}>
+  <label for={name}>{label}</label>
+  <textarea
+    id={name}
+    name={name}
+    required={required}
+    class="border-accent peer field-sizing-content min-h-24 rounded border px-2 py-1 [&:user-invalid]:border-red-500"
+  ></textarea>
+  <p
+    class="absolute -bottom-[calc(1lh+2px)] hidden items-center gap-1 text-sm text-red-500 peer-[&:user-invalid]:flex"
+  >
+    <IconCircleAlert width={16} height={16} />
+    <span>This field is required</span>
+  </p>
+</div>

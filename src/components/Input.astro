@@ -1,0 +1,38 @@
+---
+import IconCircleAlert from "./icons/IconCircleAlert.astro";
+
+const { label, name, type = "text", required, className } = Astro.props;
+---
+
+<div class:list={["relative grid", className]}>
+  <label for={name}>{label}</label>
+  <input
+    type={type}
+    id={name}
+    name={name}
+    required={required}
+    class="border-accent peer rounded border px-2 py-1 [&:user-invalid]:border-red-500"
+  />
+
+  <p
+    class="absolute -bottom-[calc(1lh+2px)] hidden items-center gap-1 text-sm text-red-500 peer-[&:user-invalid]:flex"
+  >
+    <IconCircleAlert width={16} height={16} />
+    <span class="error-message">This field is required</span>
+  </p>
+</div>
+
+<script>
+  const emailInput = document.querySelector(
+    "input[type='email']"
+  ) as HTMLInputElement;
+  const emailErrorMessageSpan = document.querySelector(
+    "input[type='email'] + p .error-message"
+  );
+
+  emailInput.addEventListener("change", (event) => {
+    emailErrorMessageSpan.textContent = emailInput.validity.typeMismatch
+      ? "Please enter a valid email address"
+      : "This field is required";
+  });
+</script>
