@@ -65,42 +65,113 @@ const email = "devtejada@gmail.com";
     </div>
 
     <form
+      novalidate
       name="contact"
       method="POST"
       action="/success"
       data-netlify="true"
       class="border-accent rounded-xl border p-4"
     >
-      <div class="grid">
+      <div class="relative grid">
         <label for="name">Name</label>
         <input
           type="text"
           id="name"
           name="name"
           required
-          class="border-accent rounded border px-2 py-1"
+          class="border-accent peer rounded border px-2 py-1 [&:user-invalid]:border-red-500"
         />
+
+        <p
+          class="absolute -bottom-[calc(1lh+2px)] hidden items-center gap-1 text-sm text-red-500 peer-[&:user-invalid]:flex"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-circle-alert"
+            ><circle cx="12" cy="12" r="10"></circle><line
+              x1="12"
+              x2="12"
+              y1="8"
+              y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"
+            ></line></svg
+          >
+          <span>This field is required</span>
+        </p>
       </div>
 
-      <div class="mt-4 grid">
+      <div class="relative mt-6 grid">
         <label for="email">Email</label>
         <input
           type="email"
           id="email"
           name="email"
           required
-          class="border-accent rounded border px-2 py-1"
+          class="border-accent peer rounded border px-2 py-1 [&:user-invalid]:border-red-500"
         />
+        <p
+          class="absolute -bottom-[calc(1lh+2px)] hidden items-center gap-1 text-sm text-red-500 peer-[&:user-invalid]:flex"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-circle-alert"
+            ><circle cx="12" cy="12" r="10"></circle><line
+              x1="12"
+              x2="12"
+              y1="8"
+              y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"
+            ></line></svg
+          >
+          <span id="email-error-message">This field is required</span>
+        </p>
       </div>
 
-      <div class="mt-4 grid">
+      <div class="relative mt-6 grid">
         <label for="message">Message</label>
         <textarea
           id="message"
           name="message"
           required
-          class="border-accent field-sizing-content min-h-24 rounded border px-2 py-1"
+          class="border-accent peer field-sizing-content min-h-24 rounded border px-2 py-1 [&:user-invalid]:border-red-500"
         ></textarea>
+        <p
+          class="absolute -bottom-[calc(1lh+2px)] hidden items-center gap-1 text-sm text-red-500 peer-[&:user-invalid]:flex"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-circle-alert"
+            ><circle cx="12" cy="12" r="10"></circle><line
+              x1="12"
+              x2="12"
+              y1="8"
+              y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"
+            ></line></svg
+          >
+          <span>This field is required</span>
+        </p>
       </div>
 
       <button
@@ -142,6 +213,28 @@ const email = "devtejada@gmail.com";
       copyEmailButton.querySelector(".checkmark").classList.add("hidden");
       copyEmailButton.querySelector(".clipboard").classList.remove("hidden");
     }, 2000);
+  });
+
+  const form = document.querySelector("form");
+  const name = document.getElementById("name") as HTMLInputElement;
+  const email = document.getElementById("email") as HTMLInputElement;
+  const message = document.getElementById("message") as HTMLTextAreaElement;
+  const emailErrorMessage = document.getElementById(
+    "email-error-message"
+  ) as HTMLSpanElement;
+
+  form.addEventListener("submit", (event) => {
+    if (
+      !name.validity.valid ||
+      !email.validity.valid ||
+      !message.validity.valid
+    ) {
+      event.preventDefault();
+
+      emailErrorMessage.textContent = email.validity.typeMismatch
+        ? "Please enter a valid email address"
+        : "This field is required";
+    }
   });
 </script>
 
