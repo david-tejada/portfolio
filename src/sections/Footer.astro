@@ -1,5 +1,5 @@
 <footer
-  class="col-[full-width] grid grid-cols-subgrid border-t-2 border-dashed border-slate-800"
+  class="col-[full-width] grid grid-cols-subgrid border-t-2 border-dashed border-[var(--color-soft)]"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -7,7 +7,7 @@
     height="24"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="var(--color-slate-800)"
+    stroke="var(--color-soft)"
     stroke-width="1"
     stroke-linecap="round"
     stroke-linejoin="round"
@@ -83,3 +83,13 @@
     </ul>
   </div>
 </footer>
+
+<style>
+  footer {
+    --color-soft: var(--color-slate-300);
+  }
+
+  :global(.dark) footer {
+    --color-soft: var(--color-slate-700);
+  }
+</style>
