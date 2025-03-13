@@ -150,19 +150,11 @@ const email = "devtejada@gmail.com";
     box-shadow: 5px 5px 0px 0px var(--color-accent);
   }
 
-  button[type="submit"] svg {
-    transition: translate 0.2s ease-in-out;
-  }
-
-  button[type="submit"]:hover svg {
-    translate: 4px -4px;
-  }
-
-  #copy-email svg.clipboard {
+  :is(#copy-email, button[type="submit"]) svg {
     transition: scale 0.2s ease-in-out;
   }
 
-  #copy-email:hover svg.clipboard {
+  :is(#copy-email, button[type="submit"]):hover svg {
     scale: 1.2;
   }
 </style>
