@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+import me from "../images/me.webp";
+---
+
+<section aria-labelledby="about" class="mt-36">
+  <h2 id="about" class="font-syne text-3xl font-bold">About Me</h2>
+  <div class="mt-12 grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr]">
+    <div>
+      <p>
+        Hello! My name is David and I like building things using web
+        technologies. I control my computer mostly using my voice and, in early
+        2022, I started building a browser extension called <a
+          href="https://rango.click"
+          class="text-accent">Rango</a
+        >
+        that allows users to navigate the web by voice. Today Rango is used by thousands
+        of people with mobility challenges to control their browsers and navigate
+        the web.
+      </p>
+
+      <p class="mt-4">
+        I enjoy building things using all kinds of technologies. Here are some
+        of the ones I have been using recently:
+        <ul class="skills-list mt-4 grid grid-cols-2 pl-4 sm:grid-cols-3">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>TypeScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Tailwind</li>
+          <li>Jest</li>
+          <li>Puppeteer</li>
+          <li>Astro</li>
+          <li>Next.js</li>
+          <li>Python</li>
+        </ul>
+      </p>
+
+      <p class="mt-4">
+        I have a degree in <strong>electronic engineering</strong> by the Universidad
+        Politécnica de Valencia.
+      </p>
+
+      <p class="mt-4">
+        I enjoy learning languages. Along with my native <strong>Spanish</strong
+        >, I speak fluent <strong>English</strong>, conversational <strong
+          >German</strong
+        >
+        and a bit of <strong>French</strong>.
+      </p>
+    </div>
+
+    <div>
+      <div class="picture mx-auto aspect-square w-[min(300px,90%)] rounded-xl">
+        <Image
+          src={me}
+          alt=""
+          width="200"
+          height="200"
+          class="mx-auto aspect-square w-full rounded-xl object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .picture {
+      position: relative;
+      transition: translate 0.2s ease-in-out;
+    }
+
+    .picture:hover {
+      translate: -5px -5px;
+    }
+
+    .picture:before {
+      content: "";
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-xl);
+      background: var(--color-accent);
+      opacity: 20%;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .picture:hover:before {
+      opacity: 0%;
+    }
+
+    .picture:after {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      right: -10px;
+      left: 10px;
+      top: 10px;
+      bottom: -10px;
+      border-radius: 0.75rem;
+      border: 2px solid var(--color-accent);
+      transition: translate 0.2s ease-in-out;
+    }
+
+    .picture:hover:after {
+      translate: 10px 10px;
+    }
+
+    .skills-list li:before {
+      content: "»";
+      position: relative;
+      top: -1px;
+      margin-right: 0.5rem;
+      color: var(--color-accent);
+    }
+  </style>
+</section>

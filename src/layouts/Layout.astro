@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "../sections/Footer.astro";
+import Header from "../sections/Header.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -14,17 +14,42 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portfolio - David Tejada" />
+    <meta name="description" content="David Tejada - Frontend Developer" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="text-slate-600 dark:bg-slate-600 dark:text-white">
-    <div class="mx-auto w-[min(40rem,100%-4rem)]">
-      <Header />
-      <slot />
-      <Footer />
-    </div>
+  <body
+    class="min-h-svh text-lg text-slate-800 dark:bg-slate-900 dark:text-slate-300"
+  >
+    <Header />
+    <slot />
+    <Footer />
   </body>
 </html>
+
+<style>
+  body {
+    display: grid;
+    grid-template-columns:
+      [full-width-start] auto [content-start] min(60rem, 100% - 4rem)
+      [content-end] auto [full-width-end];
+    grid-template-rows: auto 1fr auto;
+  }
+</style>
+
+<script is:inline>
+  function setFavicon() {
+    const favicon = document.querySelector('link[rel="icon"]');
+    favicon.href = window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "/favicon-dark.svg"
+      : "/favicon.svg";
+  }
+
+  setFavicon();
+
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", setFavicon);
+</script>

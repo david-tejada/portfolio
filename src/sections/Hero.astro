@@ -1,0 +1,96 @@
+---
+import { spring } from "motion";
+---
+
+<section aria-labelledby="hero" class="hero grid content-center text-center">
+  <h1
+    id="hero"
+    class="display-text text-background mb-4 text-7xl font-bold uppercase md:text-9xl"
+  >
+    David Tejada
+  </h1>
+  <h2
+    class="font-syne mb-4 text-3xl font-bold min-[26rem]:text-4xl min-[33rem]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
+  >
+    Building with web technologies.
+  </h2>
+  <p class="mx-auto max-w-[50ch] leading-relaxed sm:text-xl">
+    Hello! I am a frontend developer and the creator of <a
+      href="https://rango.click"
+      class="underline">Rango</a
+    >, a browser extension helping thousands navigate the web by voice. I am
+    currently looking for a new job opportunity.
+  </p>
+  <a
+    href="#contact"
+    class="border-accent text-accent mx-auto mt-8 max-w-fit rounded border px-12 py-4 font-bold"
+    ><span class="flex gap-2"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-user-round-plus"
+        ><path d="M2 21a8 8 0 0 1 13.292-6"></path><circle cx="10" cy="8" r="5"
+        ></circle><path d="M19 16v6"></path><path d="M22 19h-6"></path></svg
+      >
+      Hire me!</span
+    ></a
+  >
+</section>
+
+<style
+  define:vars={{
+    spring: spring(0.4, 0.7),
+  }}
+>
+  @font-face {
+    font-family: "Impact";
+    src: url("/fonts/impact.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+
+  .hero {
+    min-height: max(
+      100svh - 1 * (var(--header-height) + var(--header-margin-top)),
+      500px
+    );
+  }
+
+  .display-text {
+    --perspective-x: -3;
+    --perspective-y: -2;
+
+    font-family: Impact, Anton, sans-serif;
+    text-shadow:
+      -1px 1px 0 var(--color-accent),
+      0 1px 0 var(--color-accent),
+      1px 1px 0 var(--color-accent),
+      -1px -1px 0 var(--color-accent),
+      calc(-0.02em * (1 + var(--perspective-x)))
+        calc(0.02em * (1 + var(--perspective-y))) 0 var(--color-accent),
+      calc(-0.04em * (1 + var(--perspective-x)))
+        calc(0.04em * (1 + var(--perspective-y))) 0 var(--color-accent),
+      calc(-0.06em * (1 + var(--perspective-x)))
+        calc(0.06em * (1 + var(--perspective-y))) 0 var(--color-accent);
+
+    letter-spacing: 2px;
+  }
+
+  [href="#contact"] svg {
+    transition:
+      transform var(--spring),
+      scale var(--spring);
+  }
+
+  [href="#contact"]:hover svg {
+    transform: rotateY(360deg) scale(1.2);
+  }
+</style>

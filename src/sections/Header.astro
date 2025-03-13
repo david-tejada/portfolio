@@ -1,0 +1,118 @@
+---
+import HamburgerButton from "../components/HamburgerButton.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+---
+
+<header
+  class="sticky top-0 z-100 col-[full-width] mt-8 flex h-16 items-center px-8 py-4 sm:px-16"
+>
+  <div class="backdrop"></div>
+  <div class="space-around relative z-10 flex grow items-center max-sm:gap-8">
+    <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
+      <HamburgerButton
+        id="menu-button"
+        class="peer relative z-100 sm:hidden"
+        size="36"
+      />
+      <div
+        id="menu-overlay"
+        class="pointer-events-none fixed inset-0 transition-[backdrop-filter] duration-300 peer-aria-expanded:pointer-events-auto"
+      >
+      </div>
+      <ul
+        class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0 sm:gap-12"
+      >
+        <li>
+          <a
+            href="/"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#work"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >Work</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#about"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="/#contact"
+            class="rounded px-4 py-2 transition-colors duration-200 hover:bg-violet-100 dark:hover:bg-slate-700"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <ThemeToggle class="max-sm:z-1 max-sm:mr-auto max-sm:ml-0" />
+  </div>
+</header>
+
+<style>
+  :global([aria-expanded="true"]) ~ #menu-overlay {
+    -webkit-backdrop-filter: blur(5px) brightness(0.7);
+    backdrop-filter: blur(5px) brightness(0.7);
+  }
+
+  :global([aria-expanded="true"]) ~ ul {
+    box-shadow: -3px 0px 25px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  .backdrop {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    height: 200%;
+    mask-image: linear-gradient(to bottom, black 50%, transparent 50%);
+    background: linear-gradient(to bottom, white 0%, transparent 50%);
+  }
+
+  :global(.dark) .backdrop {
+    background: linear-gradient(
+      to bottom,
+      var(--color-background) 0%,
+      transparent 50%
+    );
+  }
+</style>
+
+<script>
+  const mainNavigationList = document.querySelector("#main-navigation ul");
+  const menuButton = document.querySelector("#menu-button");
+  const menuOverlay = document.querySelector("#menu-overlay");
+  const menuLinks = document.querySelectorAll("#main-navigation a");
+
+  mainNavigationList.addEventListener("touchmove", (event) => {
+    event.preventDefault();
+  });
+
+  document.addEventListener("scroll", () => {
+    closeNavigationMenu();
+  });
+
+  menuOverlay.addEventListener("click", () => {
+    closeNavigationMenu();
+  });
+
+  menuOverlay.addEventListener("touchmove", () => {
+    closeNavigationMenu();
+  });
+
+  for (const link of menuLinks) {
+    link.addEventListener("click", () => {
+      closeNavigationMenu();
+    });
+  }
+
+  function closeNavigationMenu() {
+    menuButton.ariaExpanded = "false";
+  }
+</script>
