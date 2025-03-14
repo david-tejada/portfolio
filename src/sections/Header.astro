@@ -115,4 +115,12 @@ import ThemeToggle from "../components/ThemeToggle.astro";
   function closeNavigationMenu() {
     menuButton.ariaExpanded = "false";
   }
+
+  const mediaQuery = matchMedia("(width >= 40rem)");
+
+  mediaQuery.addEventListener("change", (event) => {
+    if (mediaQuery.matches) {
+      closeNavigationMenu();
+    }
+  });
 </script>
