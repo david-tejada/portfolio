@@ -7,8 +7,9 @@ import ThemeToggle from "../components/ThemeToggle.astro";
   class="sticky top-0 z-100 col-[full-width] mt-8 flex h-16 items-center px-8 py-4 sm:px-16"
 >
   <div class="backdrop"></div>
-  <div class="space-around relative z-10 flex grow items-center max-sm:gap-8">
-    <nav id="main-navigation" class="items-center max-sm:order-1 max-sm:flex">
+  <div class="space-between relative z-10 flex grow items-center max-sm:gap-8">
+    <ThemeToggle class="bg-accent mr-auto border max-sm:z-1" />
+    <nav id="main-navigation" class="items-center max-sm:flex">
       <HamburgerButton
         id="menu-button"
         class="peer relative z-100 sm:hidden"
@@ -22,7 +23,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       </div>
       <ul
         id="main-navigation-list"
-        class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:peer-aria-expanded:translate-x-0 sm:gap-12"
+        class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:gap-12 max-sm:bg-white max-sm:px-20 max-sm:peer-aria-expanded:translate-x-0"
       >
         <li>
           <a
@@ -54,7 +55,6 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         </li>
       </ul>
     </nav>
-    <ThemeToggle class="max-sm:z-1 max-sm:mr-auto max-sm:ml-0" />
   </div>
 </header>
 
