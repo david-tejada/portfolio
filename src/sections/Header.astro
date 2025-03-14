@@ -22,7 +22,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       </div>
       <ul
         id="main-navigation-list"
-        class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0 sm:gap-12"
+        class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:peer-aria-expanded:translate-x-0 sm:gap-12"
       >
         <li>
           <a
@@ -73,9 +73,15 @@ import ThemeToggle from "../components/ThemeToggle.astro";
    * and also have the slide in transition work.
    */
   @media (width < 40rem) {
-    :global([aria-expanded="false"]) ~ ul {
+    :global(#menu-button[aria-expanded="false"]) ~ ul {
+      transition:
+        translate 300ms,
+        visibility 0ms 300ms;
       visibility: hidden;
-      pointer-events: none;
+    }
+
+    :global(#menu-button[aria-expanded="true"]) ~ ul {
+      transition: translate 300ms;
     }
   }
 
