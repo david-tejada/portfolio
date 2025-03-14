@@ -68,6 +68,17 @@ import ThemeToggle from "../components/ThemeToggle.astro";
     box-shadow: -3px 0px 25px 5px rgba(0, 0, 0, 0.15);
   }
 
+  /*
+   * This is necessary to prevent tabbing inside the menu when it's closed
+   * and also have the slide in transition work.
+   */
+  @media (width < 40rem) {
+    :global([aria-expanded="false"]) ~ ul {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
   .backdrop {
     position: absolute;
     inset: 0;
