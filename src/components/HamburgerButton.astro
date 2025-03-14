@@ -1,5 +1,5 @@
 ---
-const { id, class: className, size = 24 } = Astro.props;
+const { id, class: className, size = 24, ariaControls } = Astro.props;
 import { spring } from "motion";
 ---
 
@@ -7,6 +7,7 @@ import { spring } from "motion";
   id={id}
   class:list={[className, "hamburger-button"]}
   aria-expanded="false"
+  aria-controls={ariaControls}
 >
   <svg viewBox="0 0 100 100" width={size} fill="currentColor">
     <rect class="line top" width="80" height="8" x="10" y="15" rx="5"></rect>

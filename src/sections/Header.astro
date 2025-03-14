@@ -13,6 +13,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
         id="menu-button"
         class="peer relative z-100 sm:hidden"
         size="36"
+        ariaControls="main-navigation-list"
       />
       <div
         id="menu-overlay"
@@ -20,6 +21,7 @@ import ThemeToggle from "../components/ThemeToggle.astro";
       >
       </div>
       <ul
+        id="main-navigation-list"
         class="max-sm:dark:bg-background flex items-center justify-center gap-8 max-sm:fixed max-sm:top-0 max-sm:right-0 max-sm:bottom-0 max-sm:z-10 max-sm:translate-x-full max-sm:flex-col max-sm:bg-white max-sm:px-20 max-sm:transition-transform max-sm:duration-300 max-sm:peer-aria-expanded:translate-x-0 sm:gap-12"
       >
         <li>
@@ -85,10 +87,25 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 </style>
 
 <script>
+  const mainNavigation = document.querySelector("#main-navigation");
+  const mainNavigationLastLink =
+    mainNavigation.querySelector("li:last-child a");
   const mainNavigationList = document.querySelector("#main-navigation ul");
   const menuButton = document.querySelector("#menu-button");
   const menuOverlay = document.querySelector("#menu-overlay");
   const menuLinks = document.querySelectorAll("#main-navigation a");
+
+  mainNavigation.addEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      closeNavigationMenu();
+    }
+  });
+
+  mainNavigationLastLink.addEventListener("keydown", (event: KeyboardEvent) => {
+    if (event.key === "Tab" && !event.shiftKey) {
+      closeNavigationMenu();
+    }
+  });
 
   mainNavigationList.addEventListener("touchmove", (event) => {
     event.preventDefault();
